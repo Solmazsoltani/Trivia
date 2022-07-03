@@ -169,13 +169,7 @@ You can optionally update this game play to increase the number of questions or 
 
 ---
     
-   
-
-
-
-
-
-
+ 
 `POST '/quizzes'`
 
 - Sends a post request in order to get the next question
