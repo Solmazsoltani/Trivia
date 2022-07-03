@@ -54,7 +54,7 @@ class TriviaTestCase(unittest.TestCase):
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
-        self.assertTrue(data['totalQuestions'])
+        self.assertTrue(data['total_questions'])
 
     def test_questions_with_invalid_page(self):
         res = self.client().get("/questions?page=1000")
