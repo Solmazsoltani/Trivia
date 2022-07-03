@@ -156,23 +156,17 @@ You can optionally update this game play to increase the number of questions or 
 - Request Body:
 
 ```json
+{'previous_questions':  an array of question id's such as [1, 4, 20, 15]
+'quiz_category': a string of the current category }
+- Returns: a single new question object 
 {
-    'previous_questions': [1, 4, 20, 15]
-    quiz_category': 'current category'
- }
-```
-
-- Returns: a single new question object
-
-```json
-{
-  "question": {
-    "id": 1,
-    "question": "This is a question",
-    "answer": "This is an answer",
-    "difficulty": 5,
-    "category": 4
-  }
+    'question': {
+        'id': 1,
+        'question': 'This is a question',
+        'answer': 'This is an answer', 
+        'difficulty': 5,
+        'category': 4
+    }
 }
 ```
 
