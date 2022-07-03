@@ -65,11 +65,11 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data['message'], "unprocessable")
 
     def test_delete_question(self):
-        res = self.client().delete("/questions/10")
+        res = self.client().delete("/questions/5")
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
-        self.assertTrue(data['totalQuestions'] > 0)
+        self.assertTrue(data['total_questions'] > 0)
 
     def test_delete_invalid_question_id(self):
         res = self.client().delete("/questions/1000000000")
