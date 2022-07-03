@@ -149,18 +149,25 @@ You can optionally update this game play to increase the number of questions or 
 - Returns: Does not need to return anything besides the appropriate HTTP status code. Optionally can return the id of the question. If you are able to modify the frontend, you can have it remove the question using the id instead of refetching the questions.
 
 ---
-`POST    Add '/questions/${id}'`
-    -Add a new question
-    -Request Items that should be filled by Customers in Form :   
-       the question 
-       answer text
-       category
-       difficulty score
+---
 
-    When you submit a question on the "Add" tab,
-    the form will clear and the question will appear at the end of the last page
-    of the questions list in the "List" tab.
-    """
+`POST '/questions'`
+
+- Sends a post request in order to add a new question
+- Request Body:
+
+```json
+{
+  "question": "Heres a new question string",
+  "answer": "Heres a new answer string",
+  "difficulty": 1,
+  "category": 3
+}
+```
+
+- Returns: Does not return any new data
+
+---
     
    
 
@@ -189,25 +196,7 @@ You can optionally update this game play to increase the number of questions or 
 }
 ```
 
----
 
-`POST '/questions'`
-
-- Sends a post request in order to add a new question
-- Request Body:
-
-```json
-{
-  "question": "Heres a new question string",
-  "answer": "Heres a new answer string",
-  "difficulty": 1,
-  "category": 3
-}
-```
-
-- Returns: Does not return any new data
-
----
 
 `POST '/questions'`
 
