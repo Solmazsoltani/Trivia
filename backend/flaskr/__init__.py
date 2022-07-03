@@ -1,10 +1,11 @@
 import os
+from pyexpat import model
 from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import random
 
-from models import setup_db, Question, Category
+from models  import setup_db, Question, Category
 
 QUESTIONS_PER_PAGE = 10
 
@@ -82,7 +83,7 @@ def create_app(test_config=None):
     """
 # how to change the page number and get notified if no more data
 
-    @ app.route('/questions', methods=['GET'])
+    @ app.route('/questions>', methods=['GET'])
     # @cross_origin()
     def get_questions():
 
@@ -103,7 +104,7 @@ def create_app(test_config=None):
                 'questions': questions,
                 'total_questions': len(total_questions),
                 'categories': current_categories,
-                'currentCategory': None
+                'currentCategory':current_categories
             }) 
     """
     @TODO:
